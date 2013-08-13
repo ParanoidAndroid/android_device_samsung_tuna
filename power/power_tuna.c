@@ -58,11 +58,11 @@ static void sysfs_write(char *path, char *s)
 static void tuna_power_init(struct power_module *module)
 {
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/timer_rate",
-                "15000");
+                "20000");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/min_sample_time",
                 "45000");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/hispeed_freq",
-                "1036800");
+                "1228800");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/target_loads",
                 "85");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load",
