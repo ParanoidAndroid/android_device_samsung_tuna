@@ -60,17 +60,19 @@ static void tuna_power_init(struct power_module *module)
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/timer_rate",
                 "20000");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/min_sample_time",
-                "45000");
+                "30000");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/hispeed_freq",
-                "1228800");
+                "729600");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/target_loads",
-                "85");
+                "85 729600:90 1228800:99");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load",
-                "95");
+                "60");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay",
-                "15000");
+                "7500");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/io_is_busy",
                 "1");
+    sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration",
+                "60000");
 }
 
 static int boostpulse_open(struct tuna_power_module *tuna)
